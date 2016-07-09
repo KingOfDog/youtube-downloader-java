@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<StackPane prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="main.FXMLHandler">
+  <children>
+    <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="600.0" styleClass="footer" translateY="0.0" StackPane.alignment="BOTTOM_CENTER" />
+    <Label styleClass="header" text="YouTube Video Downloader" StackPane.alignment="TOP_CENTER">
+      <StackPane.margin>
+        <Insets top="50.0" />
+      </StackPane.margin>
+    </Label>
+    <StackPane fx:id="videoIDPane" prefHeight="150.0" prefWidth="200.0" StackPane.alignment="CENTER">
+      <children>
+        <Label styleClass="item-title" text="Video-ID" translateX="-100.0" StackPane.alignment="CENTER" StackPane.margin="$x1">
+          <labelFor>
+            <TextField fx:id="videoID" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="200.0" translateX="50.0" StackPane.alignment="CENTER">
+              <StackPane.margin>
+                <Insets fx:id="x1" />
+              </StackPane.margin>
+            </TextField>
+          </labelFor>
+        </Label>
+        <fx:reference source="videoID" />
+      </children>
+      <StackPane.margin>
+        <Insets bottom="150.0" top="75.0" />
+      </StackPane.margin>
+    </StackPane>
+    <StackPane fx:id="filePathPane" prefHeight="168.0" prefWidth="600.0" StackPane.alignment="BOTTOM_CENTER">
+      <children>
+        <Label alignment="BASELINE_LEFT" styleClass="item-title" text="Speicherort" translateX="-100.0" StackPane.alignment="CENTER" StackPane.margin="$x1">
+          <labelFor>
+            <Button fx:id="fileChooser" mnemonicParsing="false" onAction="#fileChoose" text="Speicherort auswählen" translateX="50.0" StackPane.alignment="CENTER" StackPane.margin="$x1" />
+          </labelFor>
+        </Label>
+        <fx:reference source="fileChooser" />
+        <Label fx:id="file" text="" StackPane.alignment="BOTTOM_CENTER">
+          <StackPane.margin>
+            <Insets bottom="5.0" />
+          </StackPane.margin>
+        </Label>
+      </children>
+      <StackPane.margin>
+        <Insets bottom="100.0" top="225.0" />
+      </StackPane.margin>
+    </StackPane>
+    <Button id="download" mnemonicParsing="false" onAction="#download" styleClass="default" text="Download" StackPane.alignment="BOTTOM_CENTER">
+      <StackPane.margin>
+        <Insets bottom="65.0" />
+      </StackPane.margin>
+    </Button>
+  </children>
+  <stylesheets>
+    <URL value="@style.css" />
+  </stylesheets>
+</StackPane>
